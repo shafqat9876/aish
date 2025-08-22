@@ -1,0 +1,17 @@
+
+.popular {
+  padding: 40px;
+  text-align: center;
+}
+
+.popular h1 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.popular-item {
+  display: grid;               
+  grid-template-columns: repeat(4, 1fr);  
+  gap: 20px;
+  justify-items: center;
+}

@@ -1,0 +1,22 @@
+.new-collections {
+  text-align: center;
+  margin: 50px 0;
+}
+
+.new-collections h1 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.new-collections hr {
+  width: 100px;
+  margin: 10px auto 30px;
+  border: 1px solid #ccc;
+}
+
+.collections {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 products per row */
+  gap: 20px;
+  justify-items: center;
+}
