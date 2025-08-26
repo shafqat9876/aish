@@ -1,0 +1,11 @@
+.breadcrum {
+  margin: 20px 40px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #555;
+}
+
+.breadcrum span {
+  color: #ff4d6d; /* highlight color */
+  font-weight: 600;
+}

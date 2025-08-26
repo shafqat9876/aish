@@ -1,16 +1,25 @@
-import React, { createContext, useState } from 'react';
+import React, { createContext, useState } from "react";
+import all_product from "../components/assets/all_product"; // ✅ correct import
 
-export const ShopContext = createContext();
+export const ShopContext = createContext(null);
 
 const ShopContextProvider = ({ children }) => {
-  const [all_product] = useState([
-    { id: 1, name: "Shirt", category: "men", image: "/img/shirt.png", new_price: 30, old_price: 50 },
-    { id: 2, name: "Dress", category: "women", image: "/img/dress.png", new_price: 50, old_price: 80 },
-    { id: 3, name: "Kids T-shirt", category: "kid", image: "/img/kid.png", new_price: 20, old_price: 40 }
-  ]);
+  // make products from props OR fallback to all_product
+  const [products] = useState(all_product);
+
+  // create empty cart object
+  const getDefaultCart = () => {
+    let cart = {};
+    for (let i = 0; i < products.length; i++) {
+      cart[products[i].id] = 0; 
+    }
+    return cart;
+  };
+
+  const [cart, setCart] = useState(getDefaultCart());
 
   return (
-    <ShopContext.Provider value={{ all_product }}>
+    <ShopContext.Provider value={{ all_product: products, cart, setCart }}>
       {children}
     </ShopContext.Provider>
   );

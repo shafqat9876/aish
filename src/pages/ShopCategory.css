@@ -1,61 +1,61 @@
 .ShopCategory {
-  padding: 30px;
-  background: #f9f9f9;
-  min-height: 100vh;
+  width: 100%;
+  padding: 20px 40px;
 }
 
-/* Banner */
 .ShopCategory img {
   width: 100%;
-  height: 250px;
+  max-height: 300px;
   object-fit: cover;
   border-radius: 12px;
   margin-bottom: 30px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
-/* Product Grid */
-.product-list {
+.ShopCategory-products {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  grid-template-columns: repeat(3, 1fr); /* 👈 Har row me 3 items */
   gap: 25px;
 }
 
-/* Product Card */
-.product-card {
+.item {
   background: #fff;
   border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   padding: 15px;
+  transition: transform 0.2s ease;
   text-align: center;
-  border: 1px solid #eee;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  cursor: pointer;
 }
 
-.product-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+.item:hover {
+  transform: translateY(-5px);
 }
 
-/* Product Image */
-.product-card img {
+.item img {
   width: 100%;
-  height: 180px;
+  height: 250px;
   object-fit: contain;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
 
-/* Product Name */
-.product-card h3 {
-  font-size: 18px;
-  font-weight: 600;
-  margin: 8px 0;
-  color: #333;
-}
-
-/* Price */
-.product-card p {
+.item p {
   font-size: 16px;
+  font-weight: 500;
+  margin: 8px 0;
+}
+
+.item-prices {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 5px;
+}
+
+.item-price-new {
+  color: #ff4d6d;
   font-weight: bold;
-  color: #ff4d6e;
+}
+
+.item-price-old {
+  color: #888;
+  text-decoration: line-through;
 }
