@@ -1,16 +1,14 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import "./ProductDisplay.css";
 import star_icon from "../assets/star_icon.png";
 import star_dull_icon from "../assets/star_dull_icon.png";
+import { ShopContext } from "../../context/ShopContext"; // sahi path lagao
 
 const ProductDisplay = ({ product }) => {
   const [mainImage, setMainImage] = useState(product ? product.image : "");
+  const { addToCart } = useContext(ShopContext);
 
   if (!product) return <p>Product not found</p>;
-
-  const handleAddToCart = () => {
-    alert(`${product.name} added to cart!`);
-  };
 
   return (
     <div className="product-display">
@@ -57,7 +55,7 @@ const ProductDisplay = ({ product }) => {
           <div>xxl</div>
         </div>
 
-        <button className="add-to-cart-btn" onClick={handleAddToCart}>
+        <button className="add-to-cart-btn" onClick={() => addToCart(product.id)}>
           Add to Cart
         </button>
       </div>
